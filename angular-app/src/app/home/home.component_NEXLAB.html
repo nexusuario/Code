@@ -1,0 +1,80 @@
+
+
+<div class="container">
+  <div class="row">  
+     <h1 class="heading"> Bem vindo a Plataforma Lightcoin!</h1>
+  </div> 
+
+  <div class="row">
+    <br>
+  </div> 
+
+  <div class="row bodytext">       
+      <div class="col-md-12">
+        <p class=""> Essa aplicação Blockchain demonstra o compartilhamento de energia entre uma rede de usuarios 'Residentes'. As transações de criptomoedas de energia sao lastreadas de acordo com a energia gerada. A rede tambem inclui 'Empresas' para a compra ou venda de creditos de carbono, e 'Bancos' para trocar a criptmoeda por outra moeda. </p>
+        <p class=""> Maiores informações <a [routerLink]="['/About']" > sobre a aplicação </a> </p>
+
+      </div>
+    </div> 
+
+  <div class="row">
+    <br>
+  </div> 
+
+  <div class="row">
+    <h4> Passo1 - Cria e atualiza Participantes </h4>
+  </div> 
+    <div class="row">
+    <div class="participant col-md-4">
+      <p> <strong>Residentes</strong> Ativos Proprios: Energia, Criptomoedas e Moedas local/estrangeira. As transaçoes podem ser realizadas entre residentes, bancos e empresas.</p>
+      <a [routerLink]="['/Resident']" class=participantButton>Residentes</a> 
+    </div>      
+    
+    <div class="participant col-md-4">
+      <p> <strong>Bancos</strong> Ativos Proprios: Moedas local/estrangeira ou Criptomoedas. As transaçoes podem ser realizadas com residentes, os quais podem comprar ou vender Criptomoedas. </p>
+      <a [routerLink]="['/Bank']" class="participantButton">Bancos</a>
+    </div>   
+
+    <div class="participant col-md-4">
+      <p> <strong>Empresas</strong> Ativos Proprios: Energia e Criptomoedas. Podem realizar transaçoes com residentes, os quais podem comprar ou vender creditos de carbono por criptomoedas. </p>
+      <a [routerLink]="['/UtilityCompany']" class="participantButton">Empresas</a>
+    </div> 
+  
+  </div> 
+
+  <div class="row">
+    <br>
+  </div> 
+
+
+  <div class="row">
+    <h4> Passo2 - Executar Transações </h4>
+  </div> 
+
+  <div class="row"> 
+        
+    <div class="participant col-md-4">
+      <p> Executa a transação entre Residentes pela troca de Criptomoedas por Creditos de Carbono </p>
+      <a [routerLink]="['/TransactionRR']" class=participantButton>Residente para Residente</a> 
+    </div>           
+
+    <div class="participant col-md-4">
+      <p> Executa a transação entre Residente e Banco atraves da troca de Criptomoedas por Moedas Local ou Estrangeira </p>
+      <a [routerLink]="['/TransactionRB']" class="participantButton">Residente para Banco</a>
+    </div> 
+    
+    <div class="participant col-md-4">
+      <p> Executa a transação entre Residentes e Empresas atraves da troca de Criptomoedas por Creditos de carbono </p>
+      <a [routerLink]="['/TransactionRU']" class="participantButton">Residente para Empresa </a>
+    </div>   
+    
+  </div> 
+
+  <div class="row">
+    <br>
+  </div> 
+  <div class="row">
+    <br>
+  </div> 
+
+</div>

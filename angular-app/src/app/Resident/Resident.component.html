@@ -1,0 +1,229 @@
+
+<div class="modal fade" id="addResidentModal" tabindex="-1" role="dialog" aria-labelledby="addResidentModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addResidentModalLabel">Adicionar Residente</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+            <div class="form-group text-left">
+              <label for="residentID">Residente ID</label>
+                <input formControlName="residentID" type="text" class="form-control">
+                </div>      
+            <div class="form-group text-left">
+              <label for="firstName">Nome</label>  
+                <input formControlName="firstName" type="text" class="form-control">          
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="lastName">Sobrenome</label>  
+                <input formControlName="lastName" type="text" class="form-control">          
+            </div>
+
+            <div class="form-group text-left">
+              <label for="carbonValue">Creditos Carbono</label>  
+                <input formControlName="carbonValue" type="text" class="form-control">          
+            </div>
+
+            <div class="form-group text-left">
+              <label for="carbonUnits">Unidade de Cred. Carbono</label>  
+           
+              <div>
+              <select name="carbonUnits" formControlName="carbonUnits">
+                <option value="kwh">kWh</option>               
+              </select>
+              </div>
+            </div>
+            
+            <div class="form-group text-left">
+              <label for="coinsValue">Lightcoin</label>  
+                <input formControlName="coinsValue" type="text" class="form-control">          
+            </div>
+
+            
+            <div class="form-group text-left">
+              <label for="energyValue">Energia(leitura do medidor)</label>  
+                <input formControlName="energyValue" type="text" class="form-control">          
+            </div>
+
+            <div class="form-group text-left">
+              <label for="energyUnits">Unidade da Energia</label>  
+              
+              <div>
+              <select name="energyUnits" formControlName="energyUnits">
+                <option value="kwh">kWh</option>                
+              </select>
+              </div>      
+            </div>
+
+            <div class="form-group text-left">
+              <label for="cashValue">Dinheiro</label>  
+                <input formControlName="cashValue" type="text" class="form-control">          
+            </div>
+
+            <div class="form-group text-left">
+              <label for="cashCurrency">Moeda</label>  
+              
+              <div>
+              <select name="cashCurrency" formControlName="cashCurrency">
+                <option value="R$">R$</option>                
+              </select>
+              </div>        
+            </div>
+
+                
+        </div>
+        <div class="modal-footer">
+          <button (click)="addResident(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="updateResidentModal" tabindex="-1" role="dialog" aria-labelledby="updateResidentModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="updateResidentModalLabel">Atualizar Ativo</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+            <div class="form-group text-left">
+              <label for="residentID">ID</label>
+                <input [ngModel]="residentID"formControlName="residentID" type="text" class="form-control">            
+            </div>          
+            <div class="form-group text-left">
+              <label for="firstName">Nome</label>
+                <input [ngModel]="firstName"formControlName="firstName" type="text" class="form-control">              
+            </div>          
+            <div class="form-group text-left">
+              <label for="lastName">Sobrenome</label>
+                  <textarea [ngModel]="lastName" formControlName="lastName" class="form-control" rows="3"></textarea>
+            </div>
+              
+        </div>
+        <div class="modal-footer">
+          <button (click)="updateResident(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submeter</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="deleteResidentModal" tabindex="-1" role="dialog" aria-labelledby="deleteResidentModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="deleteResidentModalLabel">Remover ativo</h4>
+      </div>
+      <form [formGroup]="myForm" (ngSubmit)="deleteResident()">
+        <div class="modal-body">
+          Quer mesmo remover o ativo?
+        </div>
+        <div class="modal-footer">
+          <button (click)="deleteResident()" type="submit" class="btn btn-danger" data-dismiss="modal">Sim</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+		<strong>Error:</strong> {{errorMessage}}
+	</div>
+  <div class="row">
+   
+      <h1 class="heading">Residentes </h1>
+  </div>
+
+ <div class="row">
+    <div class="col-md-16 text-right">
+      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addResidentModal">Adiciona Residente</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-16">
+      <table class="table table-bordered table-responsive table-hover">
+        <thead class="thead">
+          <tr class="thead-cols">
+            
+                <th class="bc">ID</th>
+            
+                <th class="bc">Nome</th>
+            
+                <th class="bc">Sobrenome</th> 
+
+                <th class="bc">Credito Carbono</th> 
+                <th class="bc">Unidades de Credito de Carbono</th>
+
+                <th class="bc">Lightcoin</th> 
+                
+               
+                <th class="bc">Energia</th>
+
+                <th class="bc">Unidades da Energia</th>
+
+                <th class="bc">Dinheiro</th>
+
+                <th class="bc">Moeda</th>
+              
+                <th class="bc">Opção</th>       
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resident of allResidents">
+          
+                <td>{{resident.residentID}}</td>
+            
+                <td>{{resident.firstName}}</td>
+            
+                <td>{{resident.lastName}}</td>
+
+                <td>{{resident.carbonValue}}</td>
+
+                <td>{{resident.carbonUnits}}</td>
+
+                <td>{{resident.coinsValue}}</td>             
+
+                <td>{{resident.energyValue}}</td>
+
+                <td>{{resident.energyUnits}}</td>
+
+                <td>{{resident.cashValue}}</td>
+
+                <td>{{resident.cashCurrency}}</td>
+
+
+           
+            <td>
+
+              <button (click)="getForm(resident.residentID);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateResidentModal">Atualiza</button>
+
+              <button (click)="setId(resident.residentID);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteResidentModal">Remove</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

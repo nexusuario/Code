@@ -1,0 +1,69 @@
+<nav class="navbar navbar-inverse navbar2">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand navfont" href="#">Plataforma Lightcoin v1</a>
+      
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown navfontAbout">
+            <a class="dropdown-toggle navfont" data-toggle="dropdown" href="#">Informação
+              <span class="caret navfont"></span></a>
+            <ul class="dropdown-menu">
+              
+              <li><a [routerLink]="['/About']">Sobre</a></li>
+              <li><a [routerLink]="['/AllTransactions']">Blockchain</a></li>              
+            </ul>
+          </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle navfont" data-toggle="dropdown" href="#">Participantes
+          <span class="caret navfont"></span></a>
+        <ul class="dropdown-menu">
+          
+          <li><a [routerLink]="['/Resident']">Residentes</a></li>
+          <li><a [routerLink]="['/Bank']">Bancos</a></li>
+          <li><a [routerLink]="['/UtilityCompany']">Empresas</a></li>
+ 
+        </ul>
+      </li>
+
+
+      <li class="dropdown">
+        <a class="dropdown-toggle navfont" data-toggle="dropdown" href="#">Transação
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+          <li><a [routerLink]="['/TransactionRR']">Residente para Residente</a></li>
+          <li><a [routerLink]="['/TransactionRU']">Residente para Empresa</a></li>
+          <li><a [routerLink]="['/TransactionRB']">Residente para Banco</a></li>
+ 
+        </ul>
+      </li>
+
+
+      <li class="dropdown">
+        <a class="dropdown-toggle navfont" data-toggle="dropdown" href="#">Ativos
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+          <li><a [routerLink]="['/Coins']">Lightcoin</a></li>
+          
+          <li><a [routerLink]="['/Energy']">Energia</a></li>
+
+          <li><a [routerLink]="['/Cash']">Dinheiro</a></li>
+          
+        </ul>
+      </li>
+
+      
+
+    </ul>
+  </div>
+</nav>
+
+<div class = "bodybackground">
+  <router-outlet></router-outlet>
+</div>
+
+
