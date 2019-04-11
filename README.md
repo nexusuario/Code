@@ -1,18 +1,13 @@
-*Read this in other languages: [中文](README-cn.md).*
-# Decentralized Energy with Hyperledger Composer
+# Credito de Carbono Decentralizado
 
-A key application of Blockchain being currently explored is a Decentralized Energy network. The idea stems from a neighborhood where certain Residents are producing energy through Solar panels or other means, and can sell excess energy to Residents needing energy. The transactions would be based on coins in each Resident's account. As per a pre-determined contract and rate, the coins would be debited from the consumer and credited to the producer, for a certain billing period. Each transaction would need to be atomic and added to a Blockchain ledger for trust and verification. The network can include Banks to transact coins for Fiat currency (USD). The network can have Utility Company who can buy or provide energy through the network.
+Com a crescente preocupação de desenvolvimento sustentável, e o futuro das próximas gerações, a comoditie de crédito de carbono tem se mostrado uma preocupação relevante diante da humanidade. Nosso trabalho visa a criação de uma plataforma em blockchain que seja referência no mercado de crédito de carbono.
 
-In this code pattern, we will create such a Blockchain application using Hyperledger Composer. The network consists of Residents, Banks and Utility Companies. Residents can exchange coins for energy among each other.  The application assumes a pre-paid system where transactions occur after the energy is consumed and the values are updated.  The Resident can exchange coins for Fiat money (USD) with Banks on the network.  The Residents can also transact coins for energy with a Utility company on the network.
-
-This code pattern is for developers looking to start building Blockchain applications with Hyperledger Composer. When the reader has completed this code pattern, they will understand how to:
-
-* Create business network using Hyperledge Composer and recording transactions on Blockchain ledger
-* Deploying the networking to an instance of Hyperledger Fabric
-* Building an Angular app to interact with the network through REST API
+* Cria uma rede de negócios em blockchain
+* Desenvolve uma instância em Hyperledger Fabric
+* Constroi um app angular para interagir com através do REST API
 
 
-# Architecture Flow
+# Fluxo de Arquitetura
 
 <p align="center">
   <img width="650" height="200" src="images/arch.png">
